@@ -41,9 +41,9 @@ function ProductCard({
             <img
               src={
                 isFavorite
-                  ? "/images/favourite-filled.svg"
-                  : "/images/favourite.svg"
-              }
+                  ? `${import.meta.env.BASE_URL}images/favourite-filled.svg`
+                  : `${import.meta.env.BASE_URL}images/favourite.svg`
+}
               alt=""
               className="favorite-icon"
             />
