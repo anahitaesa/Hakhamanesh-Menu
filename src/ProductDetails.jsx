@@ -1,4 +1,3 @@
-
 import { restaurantData } from './restaurantData'
 import './ProductDetails.css'
 
@@ -38,7 +37,10 @@ function ProductDetails({
               onClick={onBack}
               aria-label="بازگشت"
             >
-              <img src="/images/arrow.svg" alt="" />
+              <img
+                src={`${import.meta.env.BASE_URL}images/arrow.svg`}
+                alt=""
+              />
             </button>
 
             <button
@@ -54,8 +56,8 @@ function ProductDetails({
               <img
                 src={
                   isFavorite
-                    ? '/images/favourite-filled.svg'
-                    : '/images/favourite.svg'
+                    ? `${import.meta.env.BASE_URL}images/favourite-filled.svg`
+                    : `${import.meta.env.BASE_URL}images/favourite.svg`
                 }
                 alt=""
                 className="favorite-icon"
