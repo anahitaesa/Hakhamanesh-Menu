@@ -1,0 +1,345 @@
+
+/* لایه تیره پشت پنل؛ ۱۶ پیکسل فاصله از بالای صفحه */
+.product-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-top: 16px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+/* پنل جزئیات؛ تقریباً تمام ارتفاع صفحه */
+.product-sheet {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 760px;
+  height: calc(100dvh - 16px);
+  max-height: none;
+  overflow: hidden;
+  min-height: 0;
+  border: 1px solid #292929;
+  border-bottom: 0;
+  border-radius: 22px 22px 0 0;
+  background: #101111;
+  color: #fff;
+  font-family: "Peyda", Tahoma, sans-serif;
+  box-sizing: border-box;
+}
+
+/* بخش اسکرول پذیر شامل سربرگ و اطلاعات محصول */
+.product-sheet-scroll {
+  overscroll-behavior: contain;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* سربرگ؛ بدون عنوان اضافی */
+.product-sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  padding: 12px 16px;
+}
+
+/* دکمه‌های بازگشت و علاقه‌مندی */
+.sheet-back-button,
+.product-sheet-header .favorite-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid #393939;
+  border-radius: 50%;
+  background: #1b1b1b;
+  cursor: pointer;
+}
+
+/* اندازه آیکون‌ها */
+.sheet-back-button img,
+.product-sheet-header .favorite-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* تصویر اصلی محصول */
+.product-sheet-image {
+  display: block;
+  flex-shrink: 0;
+  width: 100%;
+  height: clamp(190px, 34vh, 300px);
+  object-fit: contain;
+  background: #171717;
+}
+
+/* محتوای زیر تصویر؛ در صورت نیاز اسکرول می‌شود */
+.product-sheet-content {
+  padding: 18px 18px 24px;
+  scrollbar-width: thin;
+  scrollbar-color: #444 transparent;
+}
+
+/* ردیف نشان، امتیاز و قیمت */
+.product-highlights {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* برچسب ویژه محصول */
+.product-badge {
+  padding: 6px 10px;
+  border: 1px solid #8b4c1d;
+  border-radius: 9px;
+  background: #382211;
+  color: #ffbd80;
+  font-size: 12px;
+}
+
+/* امتیاز ستاره‌ای */
+.product-rating {
+  color: #ffd166;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* قیمت در سمت چپ ردیف */
+.product-price {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  color: #ff9a4d;
+  direction: rtl;
+}
+
+.product-price strong {
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.product-price span {
+  font-size: 12px;
+}
+
+/* نام محصول */
+.product-sheet-title {
+  margin: 18px 0 6px;
+  color: #fff;
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.7;
+}
+
+/* توضیحات محصول */
+.product-sheet-description {
+  margin: 0;
+  color: #bcbcbc;
+  font-size: 14px;
+  line-height: 2;
+}
+
+/* خط جداکننده بخش‌ها */
+.product-section-divider {
+  height: 1px;
+  margin: 22px 0;
+  border: 0;
+  background: #333;
+}
+
+/* عنوان ترکیبات */
+.product-ingredients h2 {
+  margin: 0 0 12px;
+  font-size: 17px;
+}
+
+/* ترکیبات در مستطیل‌های کوچک کنار هم */
+.ingredients-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* هر ترکیب یک کارت مستقل */
+.ingredient-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 7px 11px;
+  border: 1px solid #373737;
+  border-radius: 9px;
+  background: #1b1c1c;
+  color: #e8e8e8;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+/* کارت کالری و زمان آماده‌سازی */
+.product-facts {
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+}
+
+/* ظاهر هر کارت اطلاعات */
+.product-fact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  padding: 4px 12px;
+  border: 1px solid #343434;
+  border-radius: 13px;
+  background: #1a1b1b;
+  box-sizing: border-box;
+}
+
+/* آیکون کالری و زمان */
+.product-fact-icon {
+  color: #ff8a36;
+  font-size: 23px;
+}
+
+/* عنوان اطلاعات */
+.product-fact-label {
+  color: #aaa;
+  font-size: 12px;
+}
+
+/* مقدار کالری و زمان */
+.product-fact strong {
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+/* فوتر در پایین پنل */
+.product-sheet-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 14px 18px;
+  padding-bottom: max(14px, env(safe-area-inset-bottom));
+  border-top: 1px solid #303030;
+  background: #151616;
+}
+
+/* اطلاعات تماس رستوران */
+.restaurant-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+/* عنوان تماس */
+.contact-label {
+  color: #aaa;
+  font-size: 12px;
+}
+
+/* شماره تماس قابل کلیک */
+.restaurant-contact a {
+  color: #ff9a4d;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  direction: ltr;
+  text-align: right;
+}
+
+/* دکمه کوچک اشتراک‌گذاری */
+.product-share-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid #8b4c1d;
+  border-radius: 12px;
+  background: #382211;
+  cursor: pointer;
+}
+
+/* آیکون اشتراک‌گذاری */
+.share-icon {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: #ff9a4d;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* تنظیم اندازه‌ها برای موبایل‌های کوچک */
+@media (max-width: 380px) {
+  .product-sheet-header {
+    padding: 10px 12px;
+  }
+
+  .product-sheet-image {
+    height: clamp(170px, 29vh, 230px);
+  }
+
+  .product-sheet-content {
+    padding: 14px 12px 20px;
+  }
+
+  .product-sheet-title {
+    font-size: 20px;
+  }
+
+  .product-price strong {
+    font-size: 16px;
+  }
+
+  .product-facts {
+    gap: 8px;
+  }
+
+  .product-fact {
+    padding: 11px 9px;
+  }
+
+  .product-sheet-footer {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+}
+
+
+/* مخفی کردن نوار اسکرول */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+

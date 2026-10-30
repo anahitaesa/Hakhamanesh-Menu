@@ -1,0 +1,53 @@
+/* کانتینر کامپوننت همبرگر؛ اندازه را می‌توانید از بیرون با className تغییر دهید */
+.burger-anim {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  height: min(78vh, 720px);
+  min-height: 360px;
+  margin-inline: auto;
+  direction: ltr;
+  outline: none;
+  touch-action: pan-y; /* اسکرول عمودی صفحه در موبایل مختل نشود */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.burger-anim:focus-visible {
+  outline: 2px solid #f2b84b;
+  outline-offset: 6px;
+  border-radius: 24px;
+}
+
+.burger-anim canvas {
+  display: block;
+  touch-action: pan-y;
+}
+
+/* هاله‌ی گرم پشت همبرگر؛ فقط یک شیء CSS است، نه جایگزین مدل سه‌بعدی */
+.burger-anim__glow {
+  position: absolute;
+  inset: 12% 8%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 122, 26, 0.15), rgba(255, 122, 26, 0) 70%);
+  filter: blur(24px);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+.burger-anim[aria-pressed="true"] .burger-anim__glow {
+  opacity: 0.5;
+}
+
+@media (max-width: 600px) {
+  .burger-anim {
+    height: 70vh;
+    min-height: 420px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .burger-anim__glow {
+    transition: none;
+  }
+}

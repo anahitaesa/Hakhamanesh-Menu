@@ -1,0 +1,697 @@
+/* ظاهر کلی منوی دیجیتال */
+.menu-page {
+  min-height: 100vh;
+  padding: 8px 16px 100px;
+  background: #080909;
+  color: #fff;
+  font-family: "Peyda", Tahoma, sans-serif;
+}
+
+/* سربرگ */
+.menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.menu-header h1 {
+  margin: 0;
+  color: #ff7900;
+  font-size: 28px;
+}
+
+.menu-header span {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.contact-button {
+  padding: 9px 14px;
+  border: 1px solid #ff7900;
+  border-radius: 12px;
+  color: #ff7900;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* کادر جست‌وجو */
+.menu-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 54px;
+  margin-top: 20px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  border: 1px solid #333;
+  border-radius: 16px;
+  background: #191919;
+  color: #ff7900;
+  transition: border-color 0.2s ease;
+}
+
+/* رنگ کادر هنگام جست‌وجو */
+.menu-search:focus-within {
+  border-color: #ff7900;
+}
+
+/* آیکن ذره‌بین */
+.search-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* ورودی جست‌وجو */
+.menu-search input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  padding: 14px 0;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+  color: #bbb;
+  font: inherit;
+  font-size: 13px;
+}
+
+.menu-search input::placeholder {
+  color: #555;
+}
+
+/* دکمه پاک کردن جست‌وجو */
+.clear-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #aaa;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.clear-search:hover {
+  color: #ff7900;
+}
+
+.menu-search input:focus,
+.menu-search input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.menu-search input[type="search"] {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.menu-search input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+/* بنر اصلی */
+.menu-banner {
+  margin: 20px 0 28px;
+  padding: 24px 18px;
+  border: 1px solid #4a2a14;
+  border-radius: 18px;
+  background: linear-gradient(120deg, #39200f, #191919);
+}
+
+.menu-banner p {
+  color: #ff7900;
+  font-size: 13px;
+}
+
+.menu-banner h2 {
+  font-size: 21px;
+}
+
+.menu-banner span,
+.featured-products p {
+  color: #bbb;
+  font-size: 13px;
+}
+
+/* دسته‌بندی‌های غذا */
+.menu-categories {
+  padding-top: 12px;
+  margin:  0 12px;
+}
+
+.menu-categories h2 {
+  margin: 4px 0 12px;
+  font-size: 18px;
+}
+
+/* اسکرول افقی دسته‌بندی‌ها */
+.category-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.category-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* دکمه هر دسته */
+.category-item {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 4px 10px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background: #191919;
+  color: #ddd;
+  font: inherit;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* آیکن دسته */
+.category-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* نام دسته */
+.category-name {
+  line-height: 1.5;
+}
+
+/* حالت هاور دسته */
+.category-item:hover {
+  border-color: #ff7900;
+  color: #ff7900;
+}
+
+/* بخش محصولات محبوب */
+.featured-products {
+  width: 100%;
+  margin: 16px 0 0;
+  padding: 0 0 80px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.products-heading {
+  margin: 0 0 14px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* کارت محصول */
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  min-height: 145px;
+  margin: 0 0 10px;
+  padding: 8px 8px;
+  box-sizing: border-box;
+  background: #252525;
+  border: 1px solid #494949;
+  border-radius: 18px;
+  overflow: visible;
+}
+
+/* تصویر محصول؛ بیرون‌زدگی فقط از بالا */
+.product-image {
+  position: relative;
+  z-index: 2;
+  
+  /* عرض فضایی که تصویر داخل کارت می‌گیرد */
+  flex: 0 0 42%;
+
+  /* تصویر در فضای خودش وسط‌چین می‌شود */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* تصویر از بالا یا طرفین بیرون نمی‌زند */
+  align-self: stretch;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: transparent;
+  overflow: visible;
+}
+
+/* تنظیم اندازه خود عکس */
+.product-image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 130px;
+  object-fit: contain;
+  object-position: center center;
+  background: transparent;
+}
+
+/* اطلاعات محصول در سمت چپ */
+.product-info {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0px;
+  min-width: 0;
+  padding: 0 4px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+/* ردیف نشان ویژه، امتیاز و علاقه‌مندی */
+.product-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 6px;
+  width: 100%;
+  direction: ltr;
+}
+
+/* نشان ویژه سرآشپز */
+.product-badge {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  padding: 0px 8px;
+  color: #fff;
+  background: #5e3002;
+  border: 1px solid #ff7900;
+  border-radius: 12px;
+  font-size: 10px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* امتیاز محصول */
+.product-rating {
+  color: #ffd166;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* دکمه علاقه‌مندی */
+.favorite-button {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  color: #fff;
+  background: transparent;
+  border: 1px solid #666;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* نام محصول */
+.product-info h3 {
+  width: 100%;
+  margin: 4px 0;
+  color: #fff;
+  font-size: clamp(13px, 3.7vw, 16px);
+  font-weight: 700;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+/* خط جداکننده زیر نام محصول */
+.product-divider {
+  width: 100%;
+  height: 1px;
+  flex-shrink: 0;
+  margin: 2px 0 4px;
+  background: rgb(255 255 255 / 20%);
+}
+
+/* قیمت محصول */
+.product-price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 0;
+}
+
+.product-price strong {
+  color: #ff9a4d;
+  font-size: clamp(15px, 4.2vw, 19px);
+  font-weight: 800;
+}
+
+.product-price span {
+  color: #ddd;
+  font-size: 11px;
+}
+
+/* نوار ثابت پایین صفحه */
+.menu-bottom-nav {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 4px;
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+  border-top: 1px solid #333;
+  background: #111;
+}
+
+.menu-bottom-nav button {
+  border: 0;
+  background: transparent;
+  color: #ccc;
+  font: inherit;
+  font-size: 11px;
+}
+
+/* نمایشگرهای بزرگ */
+@media (min-width: 768px) {
+  .menu-page {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+}
+
+/* موبایل‌های کوچک */
+@media (max-width: 360px) {
+  .product-card {
+    min-height: 130px;
+    padding: 10px 8px;
+  }
+
+  .product-image {
+    flex-basis: 39%;
+    padding-right: 4px;
+  }
+
+  .product-image img {
+    height: 150px;
+  }
+
+  .product-info {
+    gap: 4px;
+  }
+
+  .product-top {
+    gap: 4px;
+  }
+
+  .product-badge {
+    padding: 3px 5px;
+    font-size: 9px;
+  }
+
+  .product-rating {
+    font-size: 10px;
+  }
+
+  .favorite-button {
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+  }
+
+  .product-info h3 {
+    font-size: 12px;
+  }
+}
+
+/* مشخص کردن دسته بندی انتخاب شده */
+.category-item.active {
+  background: #532700;
+  border-color: #ff7900;
+  color: #f8f9f9;
+}
+
+/* ظاهر پیام در صورت نبودن محصول */
+.empty-product {
+  margin: 0;
+  padding: 24px 12px;
+  color:#aaa;
+  background: #191919;
+  border: 1px solid #333;
+  border-radius: 14px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* نوار پایین صفحه */
+.menu-bottom-nav {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  z-index: 100;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+
+  min-height: 64px;
+  padding: 10px 6px;
+
+  background: rgba(17, 23, 27, 0.96);
+  border: 1px solid #202a30;
+  border-radius: 28px;
+
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+}
+
+/* دکمه‌های فوتر */
+.menu-bottom-nav button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  min-width: 0;
+  padding: 5px 2px;
+
+  background: transparent;
+  border: none;
+  color: #fefefe;
+
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* آیکون‌های خطی */
+.menu-bottom-nav button img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* گزینه فعال به رنگ نارنجی */
+.menu-bottom-nav button.active {
+  color: #ff7900;
+}
+
+.menu-bottom-nav button.active svg {
+  stroke-width: 2.2;
+}
+
+/* جلوگیری از پوشیده‌شدن محصولات توسط فوتر ثابت */
+.menu-page {
+  padding-bottom: 115px;
+}
+
+
+/* لایه تیره پشت پنل جزئیات */
+.product-sheet-overlay {
+  padding-top: 16px;
+  box-sizing: border-box;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  animation: sheet-overlay-in 0.25s ease;
+}
+
+/* پنل جزئیات محصول */
+.product-sheet {
+  height: calc(100dvh - 16px);
+  width: 100%;
+  max-width: 600px;
+  max-height: none;
+  overflow-y: auto;
+  background: #202127;
+  color: #fff;
+  border-radius: 24px 24px 0 0;
+  padding: 20px 18px 32px;
+  box-sizing: border-box;
+  box-shadow: 0 -8px 35px rgba(0, 0, 0, 0.25);
+  animation: product-sheet-up 0.3s ease-out;
+}
+
+/* سربرگ پنل */
+.product-sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.product-sheet-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sheet-back-button,
+.product-sheet-header .favorite-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  padding: 8px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.sheet-back-button img,
+.product-sheet-header .favorite-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* تصویر محصول */
+.product-sheet-image {
+  display: block;
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 16px;
+  margin: 0 auto 20px;
+}
+
+/* اطلاعات محصول */
+.product-sheet-content h1 {
+  margin: 0 0 12px;
+  font-size: 23px;
+}
+
+.product-sheet-content p {
+  line-height: 1.9;
+  color: #d1d1d6;
+}
+
+.product-sheet-rating {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: #313131;
+  color: #ffd166;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.product-sheet-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  font-size: 18px;
+  color: #ff8757;
+}
+
+@keyframes product-sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes sheet-overlay-in {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(0, 0, 0, 0.45);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-sheet,
+  .product-sheet-overlay {
+    animation: none;
+  }
+}
+

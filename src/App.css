@@ -1,0 +1,395 @@
+
+@font-face {
+  font-family: "Peyda";
+  src: url("/fonts/Peyda-Medium(@vieratec).ttf") format("truetype");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* تنظیمات عمومی */
+* {
+  box-sizing: border-box;
+  font-family: inherit;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Peyda", Tahoma, Arial, sans-serif;
+  background: #111111;
+  color: #ffffff;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* صفحه خوشامدگویی */
+.app {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  padding: 24px;
+  overflow: hidden;
+  background: #080909;
+}
+
+/* سه هاله نارنجی متحرک */
+.glow-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow {
+  position: absolute;
+  width: clamp(180px, 30vw, 320px);
+  height: clamp(180px, 30vw, 320px);
+  border-radius: 50%;
+  filter: blur(85px);
+  opacity: 0.75;
+  will-change: transform, opacity;
+}
+
+.glow-1 {
+  top: 5%;
+  left: 5%;
+  background: rgba(255, 105, 0, 0.55);
+  animation: glowMove1 13s ease-in-out infinite alternate;
+}
+
+.glow-2 {
+  top: 38%;
+  right: 5%;
+  background: rgba(255, 125, 20, 0.48);
+  animation: glowMove2 17s ease-in-out infinite alternate;
+}
+
+.glow-3 {
+  bottom: 2%;
+  left: 35%;
+  background: rgba(255, 85, 0, 0.45);
+  animation: glowMove3 15s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove1 {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translate(25px, 25px);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translate(10px, 45px);
+    opacity: 0.6;
+  }
+}
+
+@keyframes glowMove2 {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: translate(-25px, -20px);
+    opacity: 0.95;
+  }
+
+  100% {
+    transform: translate(-40px, 15px);
+    opacity: 0.55;
+  }
+}
+
+@keyframes glowMove3 {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translate(20px, -25px);
+    opacity: 0.85;
+  }
+
+  100% {
+    transform: translate(-20px, -40px);
+    opacity: 0.5;
+  }
+}
+
+/* محتوای اصلی روی هاله‌ها قرار می‌گیرد */
+.hero {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 620px;
+  margin: auto;
+  padding-top: 24px;
+  padding-bottom: 16px;
+  color: #ff7900;
+  text-align: center;
+}
+
+.eyebrow {
+  color: #ff7900;
+  font-size: 12px;
+}
+
+.hero h1 {
+  margin: -12px 0;
+  font-size: 64px;
+  line-height: 1.7;
+}
+
+/* لوگو */
+.brand-logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 0;
+}
+
+.brand-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* عنوان برند */
+.brand-title {
+  display: block;
+  width: 200px;
+  margin: 12px auto 0;
+  object-fit: contain;
+}
+
+.header-brand-name {
+  display: block;
+  width: 110px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* توضیحات */
+.description {
+  color: #b8b8b8;
+  font-size: 11px;
+  line-height: 2;
+  text-align: center;
+}
+
+.description0 {
+  margin-top: 4px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* تصویر برگر */
+.burger-image {
+  position: relative;
+  width: 380px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.burger-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* لایه روی تصویر */
+.burger-image::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  content: "";
+}
+
+/* دکمه مشاهده منو */
+.menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  gap: 4px;
+  margin-top: 0;
+  padding: 12px 96px;
+  border: none;
+  border-radius: 24px;
+  background: #ff7900;
+  color: #111111;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.menu-button:hover {
+  background: #ff922e;
+}
+
+.burger-image .menu-button {
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
+  box-shadow:
+    0 -32px 30px rgba(21, 10, 0, 0.566),
+    0 8px 35px rgba(118, 56, 2, 0.55);
+  white-space: nowrap;
+}
+
+/* تنظیمات موبایل */
+@media (max-width: 480px) {
+  .brand-logo {
+    width: 84px;
+    height: 84px;
+  }
+
+  .brand-title {
+    font-size: 32px;
+  }
+
+  .glow {
+    width: 180px;
+    height: 180px;
+    filter: blur(65px);
+  }
+}
+
+/* تنظیمات صفحه منو */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Peyda", Tahoma, Arial, sans-serif;
+}
+
+.menu-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: visible;
+}
+
+/* هدر مشترک */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 18px;
+  background: #080909;
+  border-bottom: 1px solid #292929;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.header-logo {
+  display: block;
+  width: 48%;
+  height: 48%;
+  object-fit: contain;
+}
+
+.header-brand-text h1 {
+  margin: 0;
+  color: #ff7900;
+  font-size: 25px;
+  font-weight: normal;
+}
+
+.header-brand-text p {
+  margin: 3px 0 0;
+  color: #b8b8b8;
+  font-size: 12px;
+}
+
+/* دکمه تماس */
+.header-contact {
+  display: flex;
+  flex: 0 0 40px;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 32%;
+  background: #404040;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.header-contact:hover {
+  background: #ff922e;
+}
+
+.header-contact svg,
+.header-contact img {
+  display: block;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* آیکن علاقه‌مندی */
+.favorite-icon {
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.favorite-icon.active {
+  filter: brightness(0) saturate(100%)
+    invert(16%) sepia(97%) saturate(6500%)
+    hue-rotate(350deg) brightness(95%) contrast(110%);
+  transform: scale(1.1);
+}
+
+/* کاهش حرکت برای افرادی که این گزینه را فعال کرده‌اند */
+@media (prefers-reduced-motion: reduce) {
+  .glow {
+    animation: none;
+  }
+}
