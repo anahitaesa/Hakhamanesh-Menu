@@ -1,9 +1,10 @@
+const imageBase = `${import.meta.env.BASE_URL}images/`;
 
 export const products = [
   {
     id: "product-1",
     name: "هخامنش برگر دوبل ذغالی",
-    image: "/images/burger-s.png",
+    image: `${imageBase}burger-s.png`,
     badge: "👑 ویژه سرآشپز",
     rating: 4.9,
     price: 345000,
@@ -25,7 +26,7 @@ export const products = [
   {
     id: "product-2",
     name: "برگر مخصوص",
-    image: "/images/burger-s.png",
+    image: `${imageBase}burger-s.png`,
     badge: "🔥 محبوب",
     rating: 4.9,
     price: 330000,
@@ -47,7 +48,7 @@ export const products = [
   {
     id: "product-3",
     name: "پیتزا پپرونی",
-    image: "/images/pizza.png",
+    image: `${imageBase}pizza.png`,
     badge: "🧀 با پنیر موزارلا",
     rating: 5,
     price: 320000,
@@ -68,7 +69,7 @@ export const products = [
   {
     id: "product-4",
     name: "ساندویچ رویال ویژه",
-    image: "/images/pizza.png",
+    image: `${imageBase}pizza.png`,
     badge: "👑 شاهانه و پرملات",
     rating: 4.3,
     price: 295000,
