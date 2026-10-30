@@ -134,6 +134,7 @@ function MenuPage() {
               </button>
             )}
           </div>
+          
 
           {/* دسته‌بندی‌های غذا */}
           <section className="menu-categories">
