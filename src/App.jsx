@@ -8,7 +8,9 @@ function App() {
   const clickSound = useRef(null)
 
   useEffect(() => {
-    clickSound.current = new Audio('/sound/click.mp3')
+    clickSound.current = new Audio(
+  `${import.meta.env.BASE_URL}sound/click.mp3`
+)
     clickSound.current.preload = 'auto'
   }, [])
 
