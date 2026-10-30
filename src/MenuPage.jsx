@@ -216,18 +216,14 @@ function MenuPage() {
         <button type="button" className={activeTab === 'menu' ? 'active' : ''}
         onClick={() => setActiveTab('menu')}
         >
-          <img src={activeTab === 'menu' ? './images/home-orange.svg' : './images/home.svg'}
-            alt="" 
-          />
-          <span>خانه</span>  
+          <img src={`${import.meta.env.BASE_URL}images/${activeTab === 'menu' ? 'home-orange.svg' : 'home.svg'}`} alt="" />          <span>خانه</span>  
         </button>
 
         {/* علاقه مندی ها: نمایش محصولات انتخاب شده */}
         <button type="button" className={activeTab === 'favorites' ? 'active' : ''}
         onClick={() => setActiveTab('favorites')}
         >
-          <img src={activeTab === 'favorites' ? './images/favoritte0-orange.svg' : './images/favorites0.svg'}
-            alt="" 
+           <img src={`${import.meta.env.BASE_URL}images/${activeTab === 'favorites' ? 'favoritte0-orange.svg' : 'favorites0.svg'}`} alt="" />
           />
           <span>علاقه‌مندی‌ها</span>
         </button>
@@ -238,12 +234,7 @@ function MenuPage() {
           className={activeTab === 'info' ? 'active' : ''}
           onClick={() => setActiveTab('info')}
           >
-            <img
-              src={activeTab === 'info'
-                ? '/images/info-orange.svg'
-                : '/images/info.svg'}
-                alt=""
-            />
+            <img src={`${import.meta.env.BASE_URL}images/${activeTab === 'info' ? 'info-orange.svg' : 'info.svg'}`} alt="" />
             <span>اطلاعات رستوران</span>
         </button>
       </nav>
