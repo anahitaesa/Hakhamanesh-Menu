@@ -16,18 +16,17 @@ function HomePage({ onEnterMenu }) {
       <section className="hero" dir="rtl">
         {/* محل قرارگیری لوگو در مرحله بعد */}
         <div className="brand-logo">
-          <img src="/images/logo.svg" alt="لوگوی هخامنش" />
+          <img src={`${import.meta.env.BASE_URL}images/logo.svg`} alt="لوگوی هخامنش" />
         </div>
 
-        <img src="/images/hakhamanesh.svg" alt="هخامنش" className="brand-title" />
+        <img src={`${import.meta.env.BASE_URL}images/hakhamanesh.svg`} alt="هخامنش" className="brand-title" />
         <p className="description0">
           پیتزا و ساندویچ
         </p>
 
         {/* تصویر برگر در صفحه شروع */}
         <div className="burger-image">
-          <img src="/images/mac-berger.webp" alt="برگر هخامنش" />
-
+          <img src={`${import.meta.env.BASE_URL}images/mac-berger.webp`} alt="برگر هخامنش" />
           {/* دکمه مشاهده منو روی تصویر */}
           <button className="menu-button" onClick={onEnterMenu}>
             مشاهده منو
